@@ -14,6 +14,7 @@ export type ProjectPick = {
   name: string;
   kind: string;
   summary: string;
+  imageAlt: string;
 };
 
 export function ProjectLookbook({
@@ -103,7 +104,7 @@ export function ProjectLookbook({
             key={project.slug}
             id={`sheet-${project.slug}`}
             data-sheet=""
-            className={poster ? "sheet-poster scroll-mt-28" : "sheet scroll-mt-28"}
+            className={poster ? "sheet-poster scroll-mt-32" : "sheet scroll-mt-32"}
           >
             <div className="sheet-card">
               <div className="grid h-full items-center gap-6 p-5 sm:p-8 lg:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)] lg:gap-10 lg:px-12">
@@ -118,7 +119,7 @@ export function ProjectLookbook({
                   />
                   <ProjectCover
                     src={project.image}
-                    alt=""
+                    alt={project.imageAlt}
                     width={project.width}
                     height={project.height}
                     eager={index === 0}

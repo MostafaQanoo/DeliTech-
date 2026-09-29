@@ -44,7 +44,7 @@ export default async function ContactPage({
             <div>
               <dt className="text-[#9ea7b0]">{dict.contact.form.phone}</dt>
               <dd className="mt-1">
-                <a className="text-2xl font-medium hover:text-brand-bright" href={`tel:${company.phoneTel}`}>
+                <a className="text-2xl font-medium hover:text-brand-bright" href={company.phoneHref}>
                   {company.phoneDisplay}
                 </a>
               </dd>

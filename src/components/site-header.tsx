@@ -31,7 +31,7 @@ export function SiteHeader({ dict }: { dict: Dictionary }) {
 
   return (
     <header className="sticky top-0 z-40 border-b border-line bg-white/90 backdrop-blur-md">
-      <div className="mx-auto hidden h-9 max-w-6xl items-center justify-between px-4 text-xs text-slate sm:flex sm:px-6">
+      <div className="mx-auto hidden h-8 max-w-6xl items-center justify-between px-4 text-xs text-slate sm:flex sm:px-6">
         <p>
           {company.place[locale]}
           <span className="px-2 text-[#c2c7cc]">·</span>
@@ -42,14 +42,14 @@ export function SiteHeader({ dict }: { dict: Dictionary }) {
             {company.email}
           </a>
           <span className="text-[#c2c7cc]">·</span>
-          <a className="hover:text-ink" href={`tel:${company.phoneTel}`}>
+          <a className="hover:text-ink" href={company.phoneHref}>
             {company.phoneDisplay}
           </a>
         </p>
       </div>
-      <div className="mx-auto flex h-20 max-w-6xl items-center justify-between gap-4 px-4 sm:h-24 sm:px-6">
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:h-20 sm:px-6">
         <Link href={pathFor(locale)} className="shrink-0">
-          <Logo locale={locale} />
+          <Logo locale={locale} className="h-12 sm:h-14" />
         </Link>
         <nav className="hidden items-center gap-7 lg:flex" aria-label={dict.nav.menu}>
           {links.map((link) => {

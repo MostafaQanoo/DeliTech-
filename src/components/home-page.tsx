@@ -45,14 +45,14 @@ export function HomePage({ dict }: { dict: Dictionary }) {
               <Link
                 key={project.slug}
                 href={pathFor(locale, `/work/${project.slug}`)}
-                aria-label={project.name}
+                aria-label={project.imageAlt}
                 className={`hero-shot block aspect-video ${
                   ["hero-shot-a", "hero-shot-b", "hero-shot-c"][index]
                 }`}
               >
                 <ProjectCover
                   src={project.image}
-                  alt=""
+                  alt={project.imageAlt}
                   width={project.width}
                   height={project.height}
                   eager={index === 0}
@@ -228,7 +228,7 @@ export function HomePage({ dict }: { dict: Dictionary }) {
             <h2 className="display-m text-ink">{dict.closing.title}</h2>
             <p className="mt-3 text-lg leading-8 text-slate">{dict.closing.text}</p>
             <a
-              href={`tel:${company.phoneTel}`}
+              href={company.phoneHref}
               className="mt-4 block text-3xl font-medium tracking-tight text-ink"
             >
               {company.phoneDisplay}

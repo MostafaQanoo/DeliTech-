@@ -11,6 +11,7 @@ export const company = {
   email: "info@delitechnology.net",
   phoneDisplay: "0599624899",
   phoneTel: "+970599624899",
+  phoneHref: "tel:+970599624899",
   whatsapp: "https://wa.me/970599624899",
   hours: "09:00 - 17:00",
   place: { ar: "فلسطين", en: "Palestine" },
@@ -467,6 +468,7 @@ export type Project = {
   name: string;
   kind: string;
   summary: string;
+  imageAlt: string;
 };
 
 export type Dictionary = ReturnType<typeof getDictionary>;
@@ -484,6 +486,77 @@ function projectBySlug(slug: string) {
   return project;
 }
 
+const projectImageAlt: Record<(typeof projects)[number]["slug"], Copy> = {
+  arabstock: {
+    ar: "منصة عربستوك — منصة محتوى رقمي لمكتبة صور وفيديو ورسوم عربية",
+    en: "Arabstock — digital content platform for Arabic photos, video, and graphics",
+  },
+  designers: {
+    ar: "تطبيق Designers — تصفح أعمال المصممين وطلب تصميم من العميل",
+    en: "Designers — client app for browsing designer work and requesting a design",
+  },
+  amrak: {
+    ar: "أمرك — تطبيق مطاعم بقائمة رقمية وطلب وحساب على الطاولة",
+    en: "Amrak — restaurant app with a digital menu, order, and bill",
+  },
+  "car-booking": {
+    ar: "حجز سيارة — مشاوير بين المدن وتوصيل المطار واستئجار بالساعة",
+    en: "Car booking — city-to-city rides, airport transfers, and hourly hire",
+  },
+  "shoe-store": {
+    ar: "متجر أحذية — متجر إلكتروني لأحذية رياضية مع بحث وتصنيفات",
+    en: "Shoe store — online sneaker shop with search and categories",
+  },
+  "speed-car": {
+    ar: "Speed Car — تطبيق جوال لخدمات السيارة من حجز وغسيل وقطع",
+    en: "Speed Car — mobile app for car booking, washing, and parts",
+  },
+  binaya: {
+    ar: "منصة بناية — منصة مواد بناء مع بحث وتصنيفات وحساب",
+    en: "Binaya — building materials platform with search, categories, and an account",
+  },
+  "e-optics": {
+    ar: "مراكز البصريات — صورة تعبيرية لنظام مواعيد ووصفات ومخزون",
+    en: "E-Optics — expressive visual of an optical clinic system for appointments, prescriptions, and inventory",
+  },
+  "customers-crm": {
+    ar: "نظام العملاء — صورة تعبيرية لنظام إدارة العملاء والمتابعة والتقارير",
+    en: "Customers CRM — expressive visual of a customer management system",
+  },
+  "speed-limit": {
+    ar: "مراقبة السرعة — صورة تعبيرية لتطبيق ينبّه السائق عند تجاوز الحد",
+    en: "Speed Limit — expressive visual of a vehicle speed safety app",
+  },
+  devrika: {
+    ar: "ديفريكا — صورة تعبيرية لمتجر يعرض المنتج بالواقع المعزز قبل الشراء",
+    en: "Devrika — expressive visual of an augmented-reality shopping experience",
+  },
+  cyberx: {
+    ar: "سايبركس — صورة تعبيرية لمنصة عربية للتوعية بالأمن الرقمي",
+    en: "CYBERX — expressive visual of an Arabic digital security awareness platform",
+  },
+  identities: {
+    ar: "هويات بصرية — صورة تعبيرية لشعارات وهويات عدة مشاريع",
+    en: "Brand identities — expressive visual of logos and identity systems for several businesses",
+  },
+  "shop-o": {
+    ar: "شوب أو — صورة تعبيرية لمتجر إلكترونيات مع شراء وتوصيل",
+    en: "Shop O — expressive visual of an electronics online store",
+  },
+  fikra: {
+    ar: "فكرة — صورة تعبيرية لموقع تسويق إلكتروني وخطط نمو المبيعات",
+    en: "Fikra — expressive visual of an e-marketing website and sales plans",
+  },
+  jeeply: {
+    ar: "جيبلي — صورة تعبيرية لتطبيق يجمع خدمات التوصيل",
+    en: "JEEPLY — expressive visual of a delivery app for ordering and tracking",
+  },
+  delivered: {
+    ar: "ديليفريد — صورة تعبيرية لتطبيق توصيل طلبات المطاعم",
+    en: "Delivered — expressive visual of a food delivery app",
+  },
+};
+
 function presentProject(project: (typeof projects)[number], t: (value: Copy) => string) {
   return {
     slug: project.slug,
@@ -495,6 +568,7 @@ function presentProject(project: (typeof projects)[number], t: (value: Copy) => 
     name: t(project.name),
     kind: t(project.kind),
     summary: t(project.summary),
+    imageAlt: t(projectImageAlt[project.slug]),
   };
 }
 
@@ -509,12 +583,12 @@ export function getDictionary(locale: Locale) {
     brand: t(company.name),
     meta: {
       title: t({
-        ar: "ديلي تكنولوجي | برمجة وتصميم وتسويق رقمي",
-        en: "Deli Technology | Software, design, and digital marketing",
+        ar: "شركة برمجة وتطوير حلول رقمية في فلسطين | ديلي تكنولوجي",
+        en: "Software Development & Digital Solutions Company in Palestine | Deli Technology",
       }),
       description: t({
-        ar: "ديلي تكنولوجي شركة فلسطينية تأسست رسميًا عام 2021 بعد عمل حر منذ 2019. نبرمج المواقع والتطبيقات والأنظمة، ونصمّم الهوية، ونقدّم التسويق الرقمي.",
-        en: "Deli Technology is a Palestinian studio, registered in 2021 after freelance work since 2019. We build websites, apps, and business systems, and we design brands and run digital marketing.",
+        ar: "ديلي تكنولوجي شركة برمجة وتطوير حلول رقمية في فلسطين. نبني المواقع وتطبيقات الجوال والأنظمة الإدارية، ونصمّم الهوية البصرية، ونقدّم التسويق الرقمي.",
+        en: "Deli Technology is a software development and digital solutions company in Palestine. We build websites, mobile apps, and business systems, and we deliver graphic design and digital marketing.",
       }),
     },
     nav: {

@@ -420,8 +420,8 @@ html[lang="ar"] .display-2xl {
 
   .sheet .sheet-card {
     position: sticky;
-    top: 6.5rem;
-    height: calc(100svh - 8.25rem);
+    top: 7.25rem;
+    height: calc(100svh - 9rem);
   }
 
   .sheet-poster .sheet-card {

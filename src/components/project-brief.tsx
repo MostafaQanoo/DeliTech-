@@ -11,7 +11,7 @@ export function ProjectBrief({ project, href }: { project: Project; href: string
       <span className="flex h-24 w-28 shrink-0 items-center justify-center rounded-xl bg-sand md:h-44 md:w-full">
         <ProjectCover
           src={project.image}
-          alt=""
+          alt={project.imageAlt}
           width={project.width}
           height={project.height}
           sizes="(max-width: 768px) 112px, 360px"

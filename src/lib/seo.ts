@@ -46,39 +46,60 @@ export function pageMetadata(
 
 export function organizationJsonLd(locale: Locale) {
   const dict = getDictionary(locale);
+  const otherName = locale === "ar" ? company.name.en : company.name.ar;
+
   return {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "ProfessionalService",
-        "@id": `${siteUrl}/#business`,
+        "@type": ["Organization", "ProfessionalService"],
+        "@id": `${siteUrl}/#organization`,
         name: dict.brand,
-        url: `${siteUrl}/${locale}`,
+        alternateName: [otherName, "Deli Tech", "Delitech"],
+        url: siteUrl,
+        description: dict.meta.description,
         image: `${siteUrl}/logo.png`,
-        logo: `${siteUrl}/logo.png`,
+        logo: {
+          "@type": "ImageObject",
+          "@id": `${siteUrl}/#logo`,
+          url: `${siteUrl}/logo.png`,
+          contentUrl: `${siteUrl}/logo.png`,
+          caption: dict.brand,
+        },
         email: company.email,
         telephone: company.phoneTel,
         address: {
           "@type": "PostalAddress",
           addressCountry: "PS",
-          addressRegion: company.place.en,
+          addressRegion: "Palestine",
         },
         areaServed: { "@type": "Country", name: "Palestine" },
-        knowsLanguage: ["ar", "en"],
-        openingHoursSpecification: {
-          "@type": "OpeningHoursSpecification",
-          dayOfWeek: [
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday",
-            "Sunday",
-          ],
-          opens: "09:00",
-          closes: "17:00",
-        },
+        foundingDate: company.officialYear,
+        knowsLanguage: ["Arabic", "English"],
+        contactPoint: [
+          {
+            "@type": "ContactPoint",
+            telephone: company.phoneTel,
+            email: company.email,
+            contactType: "customer support",
+            areaServed: "PS",
+            availableLanguage: ["Arabic", "English"],
+            hoursAvailable: {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday",
+                "Sunday",
+              ],
+              opens: "09:00",
+              closes: "17:00",
+            },
+          },
+        ],
       },
       {
         "@type": "WebSite",
@@ -86,8 +107,12 @@ export function organizationJsonLd(locale: Locale) {
         name: dict.brand,
         url: siteUrl,
         inLanguage: ["ar", "en"],
-        publisher: { "@id": `${siteUrl}/#business` },
+        publisher: { "@id": `${siteUrl}/#organization` },
       },
     ],
   };
+}
+
+export function jsonLdScript(locale: Locale) {
+  return JSON.stringify(organizationJsonLd(locale)).replace(/</g, "\\u003c");
 }

@@ -63,7 +63,7 @@ export default async function ProjectPage({
             <div className="order-2 flex items-center justify-center lg:order-1">
               <ProjectCover
                 src={project.image}
-                alt={project.name}
+                alt={project.imageAlt}
                 width={project.width}
                 height={project.height}
                 eager
@@ -110,7 +110,7 @@ export default async function ProjectPage({
             >
               <ProjectCover
                 src={item.image}
-                alt=""
+                alt={item.imageAlt}
                 width={item.width}
                 height={item.height}
                 sizes="96px"
