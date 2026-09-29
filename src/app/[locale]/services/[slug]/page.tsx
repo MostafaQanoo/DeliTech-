@@ -45,7 +45,7 @@ export default async function ServicePage({
       <section className="border-b border-line bg-[linear-gradient(#ffffff,#f6f7f8)]">
         <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:py-20">
           <p className="text-sm font-medium text-brand">{dict.nav.services}</p>
-          <div className="mt-5 flex size-16 items-center justify-center rounded-xl bg-[#d6542e] text-white">
+          <div className="mt-5 flex size-16 items-center justify-center rounded-xl bg-brand-dark text-white">
             <ServiceIcon name={service.icon} />
           </div>
           <h1 className="display-xl mt-5 max-w-4xl text-ink">{service.title}</h1>
@@ -62,7 +62,7 @@ export default async function ServicePage({
               <li key={tag}>
                 <Badge
                   variant="outline"
-                  className="h-auto rounded-lg border-[#1764ca] bg-white px-2.5 py-1 text-sm font-medium text-[#1764ca]"
+                  className="h-auto rounded-lg border-brand bg-white px-2.5 py-1 text-sm font-medium text-brand"
                 >
                   {tag}
                 </Badge>

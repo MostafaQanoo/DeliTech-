@@ -55,7 +55,7 @@ export default async function AboutPage({
             {dict.about.sectors.map((sector) => (
               <li
                 key={sector}
-                className="rounded-lg border border-[#1764ca] px-3 py-1.5 text-sm font-medium text-[#1764ca]"
+                className="rounded-lg border border-brand px-3 py-1.5 text-sm font-medium text-brand"
               >
                 {sector}
               </li>

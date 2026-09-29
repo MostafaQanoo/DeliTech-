@@ -6,7 +6,7 @@ export function ProjectBrief({ project, href }: { project: Project; href: string
   return (
     <Link
       href={href}
-      className="group flex gap-4 rounded-2xl border border-line bg-white p-3 transition hover:-translate-y-0.5 hover:shadow-[0_24px_50px_-32px_rgba(17,17,17,0.45)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f66135] md:flex-col md:p-4"
+      className="group flex gap-4 rounded-2xl border border-line bg-white p-3 transition hover:-translate-y-0.5 hover:shadow-[0_24px_50px_-32px_rgba(17,17,17,0.45)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand md:flex-col md:p-4"
     >
       <span className="flex h-24 w-28 shrink-0 items-center justify-center rounded-xl bg-sand md:h-44 md:w-full">
         <ProjectCover

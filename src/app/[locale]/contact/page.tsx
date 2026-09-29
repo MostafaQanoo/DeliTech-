@@ -34,7 +34,7 @@ export default async function ContactPage({
       <PageHero kicker={dict.contact.kicker} title={dict.contact.title} lede={dict.contact.lede} />
       <section className="mx-auto grid max-w-6xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:py-20">
         <aside className="h-fit rounded-2xl bg-ink p-6 text-white">
-          <p className="text-sm text-[#fbb39e]">{dict.contact.office}</p>
+          <p className="text-sm text-brand-bright">{dict.contact.office}</p>
           <p className="mt-3 text-2xl font-medium">{company.place[locale]}</p>
           <dl className="mt-6 space-y-4 text-sm">
             <div>
@@ -44,7 +44,7 @@ export default async function ContactPage({
             <div>
               <dt className="text-[#9ea7b0]">{dict.contact.form.phone}</dt>
               <dd className="mt-1">
-                <a className="text-2xl font-medium hover:text-[#fbb39e]" href={`tel:${company.phoneTel}`}>
+                <a className="text-2xl font-medium hover:text-brand-bright" href={`tel:${company.phoneTel}`}>
                   {company.phoneDisplay}
                 </a>
               </dd>
@@ -52,7 +52,7 @@ export default async function ContactPage({
             <div>
               <dt className="text-[#9ea7b0]">{dict.contact.form.email}</dt>
               <dd className="mt-1">
-                <a className="hover:text-[#fbb39e]" href={`mailto:${company.email}`}>
+                <a className="hover:text-brand-bright" href={`mailto:${company.email}`}>
                   {company.email}
                 </a>
               </dd>
@@ -61,7 +61,7 @@ export default async function ContactPage({
           <p className="mt-6 text-sm leading-6 text-[#c2c7cc]">{dict.contact.support}</p>
           <a
             href={company.whatsapp}
-            className="mt-6 inline-flex text-sm font-medium text-[#f66135]"
+            className="mt-6 inline-flex text-sm font-medium text-brand-bright"
           >
             WhatsApp
           </a>

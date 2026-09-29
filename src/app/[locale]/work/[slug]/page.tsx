@@ -46,7 +46,7 @@ export default async function ProjectPage({
       <section className="relative overflow-hidden border-b border-line bg-[linear-gradient(#ffffff,#f6f7f8)]">
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_38%,rgba(246,97,53,0.14),transparent_46%)]"
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_38%,rgba(0,37,124,0.2),transparent_46%)]"
         />
         <div className="relative mx-auto max-w-6xl px-4 pb-14 pt-8 sm:px-6 lg:pb-20">
           <div className="flex items-center justify-between text-sm text-slate">
@@ -86,7 +86,7 @@ export default async function ProjectPage({
                     href={project.href}
                     target="_blank"
                     rel="noreferrer"
-                    className="text-sm font-medium text-accent underline decoration-[#1764ca]/30 underline-offset-4 hover:decoration-[#1764ca]"
+                    className="text-sm font-medium text-accent underline decoration-brand/30 underline-offset-4 hover:decoration-brand"
                   >
                     {dict.work.visit}
                   </a>
@@ -106,7 +106,7 @@ export default async function ProjectPage({
             <Link
               key={label}
               href={pathFor(locale, `/work/${item.slug}`)}
-              className="group flex items-center gap-4 border-b border-line p-5 transition hover:bg-sand focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#f66135] sm:p-7 md:border-e md:last:border-e-0"
+              className="group flex items-center gap-4 border-b border-line p-5 transition hover:bg-sand focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand sm:p-7 md:border-e md:last:border-e-0"
             >
               <ProjectCover
                 src={item.image}

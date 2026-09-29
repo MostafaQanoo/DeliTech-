@@ -45,7 +45,7 @@ export default async function ServicesPage({
             href={pathFor(locale, `/services/${service.slug}`)}
             className="rounded-xl bg-sand p-6 transition-colors hover:bg-[#eef1f4] lg:p-8"
           >
-            <span className="flex size-14 items-center justify-center rounded-xl bg-[#d6542e] text-white">
+            <span className="flex size-14 items-center justify-center rounded-xl bg-brand-dark text-white">
               <ServiceIcon name={service.icon} />
             </span>
             <h2 className="mt-5 text-2xl font-medium text-ink">{service.title}</h2>
@@ -55,7 +55,7 @@ export default async function ServicesPage({
                 <li key={tag}>
                   <Badge
                     variant="outline"
-                    className="h-auto rounded-lg border-[#1764ca] bg-white px-2.5 py-1 text-sm font-medium text-[#1764ca]"
+                    className="h-auto rounded-lg border-brand bg-white px-2.5 py-1 text-sm font-medium text-brand"
                   >
                     {tag}
                   </Badge>

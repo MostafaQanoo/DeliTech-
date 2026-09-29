@@ -22,7 +22,7 @@ export function HomePage({ dict }: { dict: Dictionary }) {
         />
         <div
           aria-hidden="true"
-          className="hero-glow pointer-events-none absolute -top-24 end-0 size-[28rem] rounded-full bg-[radial-gradient(circle,rgba(246,97,53,0.28),transparent_62%)]"
+          className="hero-glow pointer-events-none absolute -top-24 end-0 size-[28rem] rounded-full bg-[radial-gradient(circle,rgba(0,37,124,0.34),transparent_62%)]"
         />
         <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-4 py-16 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:py-24">
           <div>
@@ -72,7 +72,7 @@ export function HomePage({ dict }: { dict: Dictionary }) {
               {dict.projects.map((project) => (
                 <span key={`${copy}-${project.slug}`} className="px-8 text-sm font-medium tracking-wide">
                   {project.name}
-                  <span className="px-8 text-[#f66135]">●</span>
+                  <span className="px-8 text-brand-bright">●</span>
                 </span>
               ))}
             </div>
@@ -110,7 +110,7 @@ export function HomePage({ dict }: { dict: Dictionary }) {
               className="group flex h-full flex-col rounded-xl bg-sand p-6 transition duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-[0_24px_50px_-32px_rgba(17,17,17,0.45)] lg:p-8"
             >
               <div className="mb-4 flex items-center gap-4 md:flex-col md:items-start">
-                <span className="flex size-16 shrink-0 items-center justify-center rounded-xl bg-[#d6542e] text-white transition duration-300 group-hover:scale-110 group-hover:bg-[#f66135]">
+                <span className="flex size-16 shrink-0 items-center justify-center rounded-xl bg-brand-dark text-white transition duration-300 group-hover:scale-110 group-hover:bg-brand">
                   <ServiceIcon name={service.icon} />
                 </span>
                 <h3 className="display-s text-ink">{service.title}</h3>
@@ -121,7 +121,7 @@ export function HomePage({ dict }: { dict: Dictionary }) {
                   <li key={tag}>
                     <Badge
                       variant="outline"
-                      className="h-auto rounded-lg border-[#1764ca] bg-white px-2.5 py-1 text-sm font-medium text-[#1764ca]"
+                      className="h-auto rounded-lg border-brand bg-white px-2.5 py-1 text-sm font-medium text-brand"
                     >
                       {tag}
                     </Badge>
@@ -208,12 +208,12 @@ export function HomePage({ dict }: { dict: Dictionary }) {
 
       <section className="border-t border-line bg-[#111111] text-white">
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:py-24">
-          <p className="text-sm font-medium text-[#f66135]">{dict.process.kicker}</p>
+          <p className="text-sm font-medium text-brand-bright">{dict.process.kicker}</p>
           <h2 className="display-l mt-3 max-w-3xl">{dict.process.title}</h2>
           <ol className="mt-10 grid gap-8 md:grid-cols-3">
             {dict.process.items.map((item) => (
               <li key={item.step}>
-                <p className="text-sm font-medium text-[#f66135]">{item.step}</p>
+                <p className="text-sm font-medium text-brand-bright">{item.step}</p>
                 <h3 className="mt-3 text-2xl font-medium">{item.title}</h3>
                 <p className="mt-3 leading-7 text-[#c2c7cc]">{item.text}</p>
               </li>

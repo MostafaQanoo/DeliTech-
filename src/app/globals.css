@@ -50,9 +50,10 @@
   --color-slate: #52606d;
   --color-sand: #f6f7f8;
   --color-line: #e4e7eb;
-  --color-brand: #f66135;
-  --color-brand-dark: #d6542e;
-  --color-accent: #1764ca;
+  --color-brand: #00257c;
+  --color-brand-dark: #001449;
+  --color-brand-bright: #8aabff;
+  --color-accent: #00257c;
   --font-sans: var(--font-body);
 }
 
@@ -141,7 +142,7 @@
     @apply min-h-dvh bg-white text-ink;
   }
   ::selection {
-    background: #fddcd3;
+    background: #d9e3f8;
   }
 }
 
@@ -399,7 +400,7 @@ html[lang="ar"] .display-2xl {
   border-radius: 1.6rem;
   border: 1px solid #e4e7eb;
   background:
-    radial-gradient(120% 80% at 100% 0%, rgba(246, 97, 53, 0.1), transparent 42%),
+    radial-gradient(120% 80% at 100% 0%, rgba(0, 37, 124, 0.16), transparent 42%),
     #ffffff;
   box-shadow: 0 24px 50px -36px rgba(17, 17, 17, 0.35);
 }

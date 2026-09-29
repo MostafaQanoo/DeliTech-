@@ -47,7 +47,7 @@ export function SiteFooter({ dict }: { dict: Dictionary }) {
           <div className="mt-6 space-y-1 text-sm text-[#c2c7cc]">
             <p>{company.place[locale]}</p>
             <p>{company.hours}</p>
-            <a className="block text-white hover:text-[#fbb39e]" href={`tel:${company.phoneTel}`}>
+            <a className="block text-white hover:text-brand-bright" href={`tel:${company.phoneTel}`}>
               {company.phoneDisplay}
             </a>
             <a className="block hover:text-white" href={`mailto:${company.email}`}>

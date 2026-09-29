@@ -85,7 +85,7 @@ export function ProjectLookbook({
                     aria-current={current ? "true" : undefined}
                     aria-label={`${String(index + 1).padStart(2, "0")} ${project.name}`}
                     className={`block px-1 py-0.5 text-[11px] tabular-nums transition-colors ${
-                      current ? "text-[#f66135]" : "text-slate hover:text-ink"
+                      current ? "text-brand" : "text-slate hover:text-ink"
                     }`}
                   >
                     {String(index + 1).padStart(2, "0")}
@@ -114,7 +114,7 @@ export function ProjectLookbook({
                   />
                   <div
                     aria-hidden="true"
-                    className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_45%,rgba(246,97,53,0.14),transparent_58%)]"
+                    className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_45%,rgba(0,37,124,0.2),transparent_58%)]"
                   />
                   <ProjectCover
                     src={project.image}
